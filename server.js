@@ -10,6 +10,10 @@ app.use(require("./routes/calculation"));
 // get driver connection
 const dbo = require("./db/conn");
 
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
+
 app.listen(port, async () => {
     // perform a database connection when server starts
     await dbo.connectToServer(function (err) {
